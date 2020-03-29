@@ -1,0 +1,51 @@
+cabal-version: 1.12
+
+name:           lab1
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/lab2#readme>
+homepage:       https://github.com/KateRepekh/functional-programming/lab1
+bug-reports:    https://github.com/KateRepekh/functional-programming/issues
+author:         Kateryna Repekh
+maintainer:     krepekh@gmail.com
+copyright:      2020 Kateryna Repekh
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+
+source-repository head
+  type: git
+  location: https://github.com/KateRepekh/functional-programming/lab1
+
+library
+  exposed-modules:
+      TablesPrint
+      CRUD
+      UserTable
+      SeatsTable
+      ClassroomsTable
+      ClassesTable
+      LessonsTable
+      UsersLessonsTable
+      Database
+  other-modules:
+      Paths_lab1
+  hs-source-dirs:
+      src
+  build-depends:
+      mysql-simple,
+      boxes,
+      strings == 1.1,
+      base >=4.7 && <5
+  default-language: Haskell2010
+
+executable lab1-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_lab1
+  hs-source-dirs:
+      app
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , lab1
+  default-language: Haskell2010
